@@ -19,21 +19,44 @@ class Deathstacks extends Component {
             ['rr', '_', '_', '_', '_', '_', '_', '_', '_','bb'],
             ['rr', '_', '_', '_', '_', '_', '_', '_', '_','bb'],
             ['rr', '_', '_', '_', '_', '_', '_', '_', '_','bb'],
-            ['rr', '_', '_', '_', '_', '_', '_', '_', '_','bb'],
+            ['rr', '_', '_', '_', '_', '_', '_', '_', '_','bbrrrbrbrbbr'],
         ],
-        clicked: null
+        selected: [9,9]
     }
 
 
     select = (x, y) => {
-        this.setState({clicked: [x,y]});
+        this.setState({selected: [x,y]});
+    }
+
+    move = (x, y) => {
+        if(this.state.selected !== null){
+            const n = 4;
+            const startTowerOld = this.state.towers[this.state.selected[0]][this.state.selected[1]];
+            const destTowerOld = this.state.towers[x][y];
+            let startTowerNew = startTowerOld.length === n ? '_' : startTowerOld.substr(0, startTowerOld.length-n);
+            let destTowerNew = destTowerOld === '_' ? startTowerOld.substr(startTowerOld.length-n, startTowerOld.length) : destTowerOld + startTowerOld.substr(startTowerOld.length-n, startTowerOld.length); 
+            destTowerNew.substr(1, startTowerNew.length);
+            let newTowers = this.state.towers;
+            newTowers[x][y] = destTowerNew;
+            newTowers[this.state.selected[0]][this.state.selected[1]] = startTowerNew;
+            console.log(`
+            n:             ${n}
+            startTowerOld: ${startTowerOld}
+            destTowerOld:  ${destTowerOld}
+            startTowerNew: ${startTowerNew}
+            destTowerNew:  ${destTowerNew}
+            `);
+            this.setState({towers: newTowers});
+        }
+
     }
     
 
     getPossibleMoves = () => {
-        if(this.state.clicked === null) return null;
-        const x = this.state.clicked[0];
-        const y = this.state.clicked[1];
+        if(this.state.selected === null) return null;
+        const x = this.state.selected[0];
+        const y = this.state.selected[1];
         const tower = this.state.towers[x][y].split('');
         if(tower[0] === '_') return null;
         const possibleTargets = [];
@@ -88,7 +111,7 @@ class Deathstacks extends Component {
         }
         return (
             <div className={classes.Deathstacks}>
-                <Board highlighted={this.getPossibleMoves()} length={LENGTH}/>
+                <Board move={this.move} highlighted={this.getPossibleMoves()} length={LENGTH}/>
                 {towers}
             </div>
         )

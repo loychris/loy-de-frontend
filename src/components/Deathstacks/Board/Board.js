@@ -13,7 +13,7 @@ class Board extends Component {
         for(let i=0;i<10;i++){
             for(let j=0;j<10;j++){
                 tiles.push(
-                <Tile x={i} y={j} length={LENGTH} highlighted={this.props.highlighted} key={`${i}${j}`}/>
+                <Tile x={i} y={j} length={LENGTH} move={this.props.move} highlighted={this.props.highlighted} key={`${i}${j}`}/>
                 );
             }
         }

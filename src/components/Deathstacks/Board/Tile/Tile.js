@@ -11,29 +11,23 @@ class Tile extends Component {
         }
     }
 
+
     render(){
         const x = this.props.x;
         const y = this.props.y;
         const highlighted = this.props.highlighted ? this.props.highlighted.split(';') : [];
         let cssClasses = [classes.Tile];
         if((x+y)%2 === 1){
-            if(highlighted.includes(`${x}${y}`)){
-                console.log('highlighted: ', x, y);
-                cssClasses.push(classes.SelectedDark);
-            }else {
-                cssClasses.push(classes.Dark);
-            }
-        }else {
-            if(highlighted.includes(`${x}${y}`)){
-                console.log('highlighted: ', x, y);
-                cssClasses.push(classes.SelectedLight);
-            }else {
-                cssClasses.push(classes.Light);
-            }
+            if(highlighted.includes(`${x}${y}`)){cssClasses.push(classes.SelectedDark)}
+            else{cssClasses.push(classes.Dark)}
+        }else{
+            if(highlighted.includes(`${x}${y}`)){cssClasses.push(classes.SelectedLight)}
+            else{cssClasses.push(classes.Light)}
         }
 
         return <div className={cssClasses.join(' ')} 
-                    style={this.calcPositionStyles(x,y)}>
+                    style={this.calcPositionStyles(x,y)}
+                    onClick={() => this.props.move(x,y)}>
                         {x},{y}
                 </div>
     }
