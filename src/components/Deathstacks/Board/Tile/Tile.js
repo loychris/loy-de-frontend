@@ -27,7 +27,7 @@ class Tile extends Component {
 
         return <div className={cssClasses.join(' ')} 
                     style={this.calcPositionStyles(x,y)}
-                    onClick={() => this.props.move(x,y)}>
+                    onClick={() => {this.props.move(x,y)}}>
                         {x},{y}
                 </div>
     }

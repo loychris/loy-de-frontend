@@ -30,7 +30,7 @@ class Deathstacks extends Component {
     }
 
     move = (x, y) => {
-        if(this.state.selected !== null){
+        if(this.state.selected !== null && this.getPossibleMoves().includes(`${x}${y}`)){
             const n = 4;
             const startTowerOld = this.state.towers[this.state.selected[0]][this.state.selected[1]];
             const destTowerOld = this.state.towers[x][y];
