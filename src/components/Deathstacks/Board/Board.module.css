@@ -2,16 +2,23 @@
     z-index: 90;
 }
 
-.DarkTile {
+.Tile {
     position: absolute;
     width: 80px;
     height: 80px;
-    background-color: #aaa;
 }
 
+.DarkTile {
+
+    background: radial-gradient(57.38% 57.38% at 50% 50%, #B2B2B2 0%, #8E8E8E 100%);}
+
 .LightTile {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background-color: #bbb;
+    background: radial-gradient(59.84% 59.84% at 50% 50%, #EDEDED 48.2%, #C9C9C9 100%);}
+
+.SelectedDarkTile {
+    background-color: red;
+
+}
+.SelectedLightTile {
+    background-color: red;
 }

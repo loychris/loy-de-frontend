@@ -1,0 +1,23 @@
+<svg width="247" height="209" viewBox="0 0 247 209" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M247 153C247 183.928 191.707 209 123.5 209C55.2928 209 0 183.928 0 153C0 122.072 55.2928 97 123.5 97C191.707 97 247 122.072 247 153Z" fill="#710000"/>
+<path d="M0 117H247V153H0V117Z" fill="#710000"/>
+<ellipse cx="123.5" cy="117" rx="123.5" ry="56" fill="#990000"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="28" y="10" width="191" height="143">
+<ellipse cx="123.5" cy="110" rx="95.5" ry="43" fill="#B0B0B0"/>
+<mask id="mask1" maskUnits="userSpaceOnUse" x="28" y="0" width="191" height="107">
+<rect x="28" width="191" height="107" fill="#B0B0B0"/>
+</mask>
+<g mask="url(#mask1)">
+<ellipse cx="123.5" cy="107.5" rx="95.5" ry="97.5" fill="#B0B0B0"/>
+</g>
+</mask>
+<g mask="url(#mask0)">
+<rect x="28" width="191" height="153" fill="url(#paint0_radial)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(104.5 76) rotate(75.7888) scale(79.4308 117.344)">
+<stop stop-color="#B96F6F"/>
+<stop offset="1" stop-color="#710000"/>
+</radialGradient>
+</defs>
+</svg>
