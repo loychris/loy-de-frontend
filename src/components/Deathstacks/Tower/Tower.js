@@ -31,7 +31,7 @@ class Tower extends Component {
         }
 
         return(
-            <div className={classes.tower}>
+            <div onClick={() => this.props.select(this.props.x, this.props.y)} className={classes.tower}>
                 {stones}
             </div>
         )
